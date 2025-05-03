@@ -33,11 +33,11 @@ pipeline {
 
         stage('push to docker hub'){
             environment {
-                DOCKER_IMAGE = "kvnikhill/flipkart-node:${BUILD_NUMBER}"
+                DOCKER_IMAGE = "kvnikhill/flipkart-demo:${BUILD_NUMBER}"
             }
             steps {
                 sh '''
-                    docker build -t ${DOCKER_IMAGE} .
+                    docker.build -t ("${DOCKER_IMAGE}")
                     def dockerImage = docker.image("${DOCKER_IMAGE}")
                     withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
                         dockerImage.push()
