@@ -4,7 +4,7 @@ metadata:
   name: flipkart-service
 spec:
   selector:
-    fapp.kubernetes.io/name: Flipkart
+    fapp.kubernetes.io/name: flipkart
   ports:
     - protocol: TCP
       port: 3000
