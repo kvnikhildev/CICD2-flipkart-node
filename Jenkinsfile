@@ -24,7 +24,7 @@ pipeline {
 
         stage('static code analysis'){
             steps{
-                withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
+                withCredentials([string(credentialsId: 'sonarqube: 'SONAR_TOKEN')]) {
                
                 sh 'npx sonar-scanner'
                 }
