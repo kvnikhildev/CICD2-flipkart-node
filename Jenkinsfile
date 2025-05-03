@@ -24,7 +24,7 @@ pipeline {
 
         stage('static code analysis'){
             steps{
-                sh 'npz sonar-scanner'
+                sh 'npx sonar-scanner'
             }
         }
 
