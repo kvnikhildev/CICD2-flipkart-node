@@ -49,7 +49,7 @@ pipeline {
 
         stage('update Deployment file') {
             environment{
-                GIT_REPO_NAME = "flipkart-clone"
+                GIT_REPO_NAME = "CICD2-flipkart-node"
                 GIT_USER_NAME = "kvnikhildev"
             }
             steps {
