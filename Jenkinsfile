@@ -57,9 +57,9 @@ pipeline {
                 sh """
                     git config user.name "kvnihkill"
                     git config user.email "kvnihkill@gmail.com"
-                    BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/ReplaceWithYourImage/${BUILD_NUMBER}/g" Deployment/Deployment.templte.yml
-                    git add Deployment/Deployment.templte.yml  
+                    cp Deployment/Deployment.templte.yml Deployment/Deployment.yml
+                    sed -i "s/ReplaceWithYourImage/${BUILD_NUMBER}/g" Deployment/Deployment.yml
+                    git add Deployment/Deployment.yml  
                     git commit -m "updating deployment file with image tag ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:main
                 """
