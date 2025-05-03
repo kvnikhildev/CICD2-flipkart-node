@@ -36,13 +36,14 @@ pipeline {
                 DOCKER_IMAGE = "kvnikhill/flipkart-demo:${BUILD_NUMBER}"
             }
             steps {
-                sh '''
-                    docker.build -t ("${DOCKER_IMAGE}")
+                script {
+                    
+                    docker.build("${DOCKER_IMAGE}")
                     def dockerImage = docker.image("${DOCKER_IMAGE}")
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub') {
                         dockerImage.push()
-                    }
-                '''                                                  
+                    } 
+                }                                           
             }
 
             
