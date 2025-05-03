@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: Flipkart
-        image: kvnikhill/flipkart-demo:ReplaceWithYourImage
+        image: kvnikhill/flipkart-demo:24
         ports:
         - containerPort: 3000
