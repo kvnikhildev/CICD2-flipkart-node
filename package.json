@@ -5,7 +5,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "jest"
+     "test": "jest --coverage"
   },
   "name": "flipkart-clone",
   "version": "1.0.0",
